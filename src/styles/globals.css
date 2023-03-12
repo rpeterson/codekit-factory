@@ -2,6 +2,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  height: 100%;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
@@ -13,4 +14,79 @@ a {
 
 * {
   box-sizing: border-box;
+}
+
+#gjs {
+  height: 100vh;
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: stretch;
+  flex-wrap: nowrap;
+}
+
+.column {
+  min-height: 75px;
+  flex-grow: 1;
+  flex-basis: 100%;
+  overflow: auto;
+} 
+
+.gjs-pn-devices-c {
+  padding-bottom: 0;
+}
+
+.editor-clm {
+  display: flex;
+  flex-direction: column;
+}
+
+.gjs-blocks-c {
+  justify-content: center;
+  height: 50px;
+}
+
+.gjs-block {
+  width: auto;
+  font-size: 5px;
+  justify-content: center;
+  height: auto;
+  min-height: auto;
+}
+
+.gjs-block-label {
+  display: none;
+}
+
+.gjs-cv-canvas {
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.gjs-blocks-cs {
+  border: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: none;
+}
+
+/* Theming */
+.gjs-one-bg {
+  background-color: #242a3b;
+}
+
+.gjs-two-color {
+  color: #9ca8bb;
+}
+
+.gjs-three-bg {
+  background-color: #1e8fe1;
+  color: white;
+}
+
+.gjs-four-color,
+.gjs-four-color-h:hover {
+  color: #1e8fe1;
 }
