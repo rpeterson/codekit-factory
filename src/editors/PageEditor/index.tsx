@@ -1,28 +1,24 @@
-import { Box, Flex, SimpleGrid, Button } from "@chakra-ui/react";
-import { Editor, Frame, Canvas, Selector } from "@craftjs/core";
+import * as ui from "@chakra-ui/react";
+import { Editor, Frame, Element } from "@craftjs/core";
+import { Layers } from "@craftjs/layers";
 
-import * as PageComponents from "@codekit/studio/components";
+import { Toolbox, UI } from "./toolbox";
 
 export function PageEditor() {
   return (
-    <>
-      <Box />
-      <Flex justifyContent="space-between" alignItems="flex-start">
-        <Box width="300px">
-          <SimpleGrid columns={1} spacingX={1} spacingY={1}>
-            <Button variant="solid" size="md">
-              Button
-            </Button>
-          </SimpleGrid>
-        </Box>
-        <Box flex={1} display="block" height="100%">
-          <Editor resolver={{ Button }}>
-            <Frame>
-            </Frame>
-          </Editor>
-        </Box>
-      </Flex>
-      <Box />
-    </>
+    <Editor resolver={UI}>
+      <ui.Flex justifyContent="space-between" alignItems="flex-start">
+        <ui.Box width="300px">
+          <Layers />
+          <Toolbox />
+        </ui.Box>
+        <ui.Box flex={1} display="block" height="100vh">
+          <Frame>
+            <Element is={ui.Box}  height="100vh" width="100%" background="#EEE" border="1px dashed black" canvas>
+            </Element>
+          </Frame>
+        </ui.Box>
+      </ui.Flex>
+    </Editor>
   );
 }
